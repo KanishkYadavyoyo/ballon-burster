@@ -1,4 +1,4 @@
-var bow , arrow,  background;
+var bow , arrow , arrowgroup , background , balloongroup;
 var bowImage, arrowImage, green_balloonImage, red_balloonImage, pink_balloonImage ,blue_balloonImage, backgroundImage;
 
 function preload(){
@@ -26,7 +26,17 @@ function setup() {
   bow = createSprite(380,220,20,50);
   bow.addImage(bowImage); 
   bow.scale = 1;
-  
+  //create group of balloon 
+  balloongroup = createGroup;
+  //adding ballons 
+  balloongroup.add = redBalloon;
+  balloongroup.add = greenBalloon;
+  balloongroup.add = blueBalloon;
+  balloongroup.add = pinkBalloon;
+ //create group of arrow
+  arrowgroup = createGroup;
+  //adding
+  arrowgroup.add(arrow);
 }
 
 function draw() {
@@ -45,16 +55,10 @@ function draw() {
   if (keyDown("space")) {
     createArrow();
   }
-  if (arrow.collide(red)){
+  if(balloongroup.collide(arrowgroup)){
     red.destroy();
-  }
-  if (arrow.collide(green)){
     green.destroy();
-  }
-  if (arrow.collide(blue)){
     blue.destroy();
-  }
-  if (arrow.collide(pink)){
     pink.destroy();
   }
   //creating continous balloons
