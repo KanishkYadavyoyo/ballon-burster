@@ -27,14 +27,14 @@ function setup() {
   bow.addImage(bowImage); 
   bow.scale = 1;
   //create group of balloon 
-  balloongroup = createGroup;
+  balloongroup = new Group;
   //adding ballons 
-  balloongroup.add = redBalloon;
-  balloongroup.add = greenBalloon;
-  balloongroup.add = blueBalloon;
-  balloongroup.add = pinkBalloon;
+  balloongroup.add(redBalloon);
+  balloongroup.add (greenBalloon);
+  balloongroup.add( blueBalloon);
+  balloongroup.add(pinkBalloon);
  //create group of arrow
-  arrowgroup = createGroup;
+  arrowgroup =  new Group;
   //adding
   arrowgroup.add(arrow);
 }
