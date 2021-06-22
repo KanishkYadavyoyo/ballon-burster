@@ -27,19 +27,20 @@ function setup() {
   bow.addImage(bowImage); 
   bow.scale = 1;
   //create group of balloon 
-  redG = new Group;
-  blueG = new Group;
-  greenG = new Group;
-  pinkG = new Group;
+  redG = new Group();
+  blueG = new Group();
+  greenG = new Group();
+  pinkG = new Group();
 
   
  //create group of arrow
-  arrowgroup =  new Group;
+  arrowgroup =  new Group();
   
   
 }
 
-function draw() {
+function draw()
+{
  background(0);
   // moving ground
     scene.velocityX = -3 
@@ -59,18 +60,22 @@ function draw() {
   }
   if(redG.collide(arrowgroup)){
     redG.destroyEach();
+    arrowgroup.destroyEach();
     score = score+20;
   }
   if(blueG.collide(arrowgroup)){
     blueG.destroyEach();
+    arrowgroup.destroyEach();
     score = score+20;
   }
   if(pinkG.collide(arrowgroup)){
     pinkG.destroyEach();
+    arrowgroup.destroyEach();
     score = score+20;
   }
   if(greenG.collide(arrowgroup)){
     greenG.destroyEach();
+    arrowgroup.destroyEach();
     score = score+20;
   }
   
