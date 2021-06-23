@@ -51,10 +51,8 @@ function draw()
   
   //moving bow
   bow.y = World.mouseY;
-  //giving score in game
-  new Text("score:"+score,200,20);
-  Text.size(3);
-   // release arrow when space key is pressed
+  
+   // release arrow when space key is pressed.
   if (keyDown("space")) {
     createArrow();
   }
@@ -80,7 +78,7 @@ function draw()
   }
   
   //creating continous balloons
-  var select_balloon = Math.round(random(1,1));
+  var select_balloon = Math.round(random(1,4));
   if (World.frameCount % 100 == 0) {
     if (select_balloon == 1) {
       redBalloon();
@@ -94,6 +92,10 @@ function draw()
   }
   
   drawSprites();
+  //giving score in game
+  textSize(20);
+  text("score:"+score,200,20);
+  
 }
 
 
